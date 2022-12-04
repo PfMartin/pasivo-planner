@@ -4,7 +4,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+[VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
 ## Type Support For `.vue` Imports in TS
 
@@ -26,7 +26,7 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 ### Custom templates after twentytwentytwo
 
-- Modify `functions.php` inside your theme
+-   Modify `functions.php` inside your theme
 
 ```php
 # wordpress/html/wp-content/themes/twnetytwentytwo/functions.php
@@ -53,9 +53,9 @@ add_action( 'wp_enqueue_scripts', 'financeplanner_scripts' );
 # ...
 ```
 
-- Copy your app's build files to the paths that should be loaded in `wp_enqueue_style` and `wp_enqueue_script`.
+-   Copy your app's build files to the paths that should be loaded in `wp_enqueue_style` and `wp_enqueue_script`.
 
-- Create the folders in your used theme and copy the files
+-   Create the folders in your used theme and copy the files
 
 ```bash
 sudo ./setup_files.sh
@@ -67,8 +67,8 @@ sudo ./setup_files.sh
 
 [wpmudev.com - create hybrid spa](https://wpmudev.com/blog/creating-a-hybrid-single-page-app-wordpress-with-vuejs/)
 
-- Create `.php` file in the used theme
-- In my case it was the theme `twentytwentythree`
+-   Create `.php` file in the used theme
+-   In my case it was the theme `twentytwentythree`
 
 ```php
 <?php Template Name: Search Page ?>

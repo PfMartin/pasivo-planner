@@ -1,0 +1,3 @@
+# Build directory of app
+dist
+node_modules
