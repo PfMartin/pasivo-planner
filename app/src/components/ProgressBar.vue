@@ -1,22 +1,30 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+
+const props = defineProps<{
+  progress: number;
+}>();
+
+const progressMap: Record<string, string> = {
+  ['0']: 'empty',
+  ['20']: 'twenty',
+  ['40']: 'fourty',
+  ['60']: 'sixty',
+  ['80']: 'eigthy',
+  ['100']: 'full',
+};
 
 const barClass = ref(['progress', 'zero']);
-
-const fillBar = () => {
-  barClass.value = ['progress', 'fivty'];
-  console.log('fill button');
-};
-
-const clearBar = () => {
-  barClass.value = ['progress', 'zero'];
-  console.log('clear button');
-};
+watch(
+  () => props.progress,
+  (newValue: number) => {
+    const progressString = `${newValue}`;
+    barClass.value = ['progress', progressMap[progressString]];
+  }
+);
 </script>
 
 <template>
-  <button @click.prevent="fillBar">Fill Bar</button>
-  <button @click.prevent="clearBar">Clear Bar</button>
   <div class="progress-bar">
     <div class="bar">
       <div :class="barClass"></div>
@@ -44,11 +52,23 @@ const clearBar = () => {
   background: #68937c;
   transition: width 0.6s ease-out;
 }
-.progress.zero {
+.progress.empty {
   width: 0%;
 }
+.progress.twenty {
+  width: 20%;
+}
+.progress.fourty {
+  width: 40%;
+}
+.progress.sixty {
+  width: 60%;
+}
+.progress.eighty {
+  width: 80%;
+}
 
-.progress.fivty {
-  width: 50%;
+.progress.full {
+  width: 100%;
 }
 </style>
