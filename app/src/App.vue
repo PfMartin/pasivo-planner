@@ -2,7 +2,7 @@
 
 <template>
   <RouterLink :to="{ name: 'Home' }">Home</RouterLink>&nbsp;
-  <RouterLink :to="{ name: 'About' }">About</RouterLink>
+  <RouterLink :to="{ name: 'LifeSituation' }">Questionnaire</RouterLink>
 
   <RouterView />
 </template>
