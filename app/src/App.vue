@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import Home from "@/views/Home.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Home />
+  <RouterLink :to="{ name: 'Home' }">Home</RouterLink>&nbsp;
+  <RouterLink :to="{ name: 'About' }">About</RouterLink>
+
+  <RouterView />
 </template>
 
 <style scoped></style>
