@@ -1,16 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  progress: number;
+}>();
+
+const width = computed(() => {
+  return `${props.progress}%`;
+});
+</script>
 
 <template>
   <div class="progress-bar">
-    <div class="progress-element active"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
+    <div class="bar">
+      <div class="progress" :style="`width: ${width}`"></div>
+    </div>
   </div>
 </template>
 
@@ -20,13 +24,18 @@
   justify-content: center;
 }
 
-.progress-bar .progress-element {
+.bar {
+  width: 500px;
   height: 10px;
-  width: 50px;
   background: #eee;
+  border-radius: 10px;
 }
 
-.progress-bar .progress-element.active {
+.progress {
+  border-radius: 10px;
+  width: 0%;
+  height: 100%;
   background: #68937c;
+  transition: width 0.6s ease-out;
 }
 </style>
