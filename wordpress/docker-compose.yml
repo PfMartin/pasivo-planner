@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  wordpress:
+    image: wordpress
+    links:
+      - wordpress-db:mysql
+    environment:
+      - WORDPRESS_DB_PASSWORD=securePassword
+      - WORDPRESS_DB_USER=root
+    ports:
+      - "127.0.0.1:5005:80"
+    volumes:
+      - ./html:/var/www/html
+
+  wordpress-db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=securePassword
+      - MYSQL_DATABASE=wordpress
+    volumes:
+      - ./database:/var/lib/mysql
