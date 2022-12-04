@@ -17,7 +17,6 @@ watch(
   () => route.path,
   () => {
     const newRouteNameString = route.path.split('/').reverse()[0];
-
     progress.value = routeProgress[newRouteNameString];
   }
 );
