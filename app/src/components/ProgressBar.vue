@@ -1,16 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const barClass = ref(['progress', 'zero']);
+
+const fillBar = () => {
+  barClass.value = ['progress', 'fivty'];
+  console.log('fill button');
+};
+
+const clearBar = () => {
+  barClass.value = ['progress', 'zero'];
+  console.log('clear button');
+};
+</script>
 
 <template>
+  <button @click.prevent="fillBar">Fill Bar</button>
+  <button @click.prevent="clearBar">Clear Bar</button>
   <div class="progress-bar">
-    <div class="progress-element active"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
-    <div class="progress-element"></div>
+    <div class="bar">
+      <div :class="barClass"></div>
+    </div>
   </div>
 </template>
 
@@ -20,13 +30,25 @@
   justify-content: center;
 }
 
-.progress-bar .progress-element {
+.bar {
+  width: 500px;
   height: 10px;
-  width: 50px;
   background: #eee;
+  border-radius: 10px;
 }
 
-.progress-bar .progress-element.active {
+.progress {
+  border-radius: 10px;
+  width: 0%;
+  height: 100%;
   background: #68937c;
+  transition: width 0.6s ease-out;
+}
+.progress.zero {
+  width: 0%;
+}
+
+.progress.fivty {
+  width: 50%;
 }
 </style>
