@@ -18,24 +18,22 @@ const width = computed(() => {
   </div>
 </template>
 
-<style scoped lang="css">
+<style scoped lang="scss">
 .progress-bar {
   display: flex;
   justify-content: center;
-}
-
-.bar {
-  width: 500px;
-  height: 10px;
-  background: #eee;
-  border-radius: 10px;
-}
-
-.progress {
-  border-radius: 10px;
-  width: 0%;
-  height: 100%;
-  background: #68937c;
-  transition: width 0.6s ease-out;
+  .bar {
+    width: 500px;
+    height: 10px;
+    background: #eee;
+    border-radius: 10px;
+    .progress {
+      border-radius: 10px;
+      width: 0%;
+      height: 100%;
+      background: #68937c;
+      transition: width 0.6s ease-out;
+    }
+  }
 }
 </style>

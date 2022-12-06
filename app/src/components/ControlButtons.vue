@@ -12,4 +12,4 @@ defineProps<{
   </div>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="scss"></style>
