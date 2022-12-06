@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h3>Income</h3>
+  <h1>Income</h1>
 </template>

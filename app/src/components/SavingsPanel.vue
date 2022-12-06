@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h3>Savings</h3>
+  <h1>Savings</h1>
 </template>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import ControlButtons from '@/components/ControlButtons.vue';
 import ProgressBar from '@/components/ProgressBar.vue';
-import { ref, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { computed } from 'vue';
 
 const routeProgress: Record<string, number> = {
   LifeSituation: 0,
@@ -31,24 +31,25 @@ const prevRoute = computed((): string => {
   return routes[currentIndex - 1];
 });
 
-const progress = ref(0);
-watch(
-  () => route.path,
-  () => {
-    const name = <string>route.name;
-    progress.value = routeProgress[name];
-  }
-);
+const progress = computed(() => {
+  const name = <string>route.name;
+  return routeProgress[name];
+});
 </script>
 
 <template>
   <ProgressBar :progress="progress" />
-  <div>
-    <RouterLink :to="{ name: 'Profession' }">Profession</RouterLink>&nbsp;
-    <RouterLink :to="{ name: 'Income' }">Income</RouterLink>&nbsp;
-    <RouterLink :to="{ name: 'Savings' }">Savings</RouterLink>&nbsp;
-    <RouterLink :to="{ name: 'Children' }">Children</RouterLink>
+  <div class="content">
     <RouterView />
   </div>
   <ControlButtons :toBack="prevRoute" :toNext="nextRoute" />
 </template>
+
+<style scoped lang="scss">
+.content {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
