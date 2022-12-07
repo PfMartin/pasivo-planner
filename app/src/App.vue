@@ -22,6 +22,7 @@
 
   .content {
     margin-top: 2rem;
+    width: 800px;
   }
 }
 </style>

@@ -4,6 +4,9 @@ defineProps<{
   toNext: string;
   toBack: string;
 }>();
+
+const backIconConfig = { name: 'fa-solid fa-chevron-left', position: 'left' };
+const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
 </script>
 
 <template>
@@ -13,7 +16,7 @@ defineProps<{
         v-if="toBack"
         :toName="toBack"
         text="Back"
-        :iconConfig="{ name: 'fa-solid fa-chevron-left', position: 'left' }"
+        :iconConfig="backIconConfig"
       />
     </div>
     <div class="next-button">
@@ -21,7 +24,7 @@ defineProps<{
         v-if="toNext"
         :toName="toNext"
         text="Next"
-        :iconConfig="{ name: 'fa-solid fa-chevron-right', position: 'right' }"
+        :iconConfig="nextIconConfig"
       />
     </div>
   </div>
