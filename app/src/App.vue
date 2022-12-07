@@ -21,8 +21,8 @@
   }
 
   .content {
-    margin-top: 2rem;
-    width: 800px;
+    margin: 2rem auto;
+    max-width: 700px;
   }
 }
 </style>

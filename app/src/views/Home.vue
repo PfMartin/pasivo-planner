@@ -9,7 +9,7 @@ const iconConfig = {
 
 <template>
   <div class="home">
-    <h1>Erstelle dein personalisiertes Finanzkonzept!</h1>
+    <h2>Erstelle dein personalisiertes Finanzkonzept!</h2>
     <p>
       Entdecke in wenigen Minuten die für dich passende Strategie, um deine
       Finanzen zu managen. Der Algorithmus stellt dir Fragen, um deine Situation
