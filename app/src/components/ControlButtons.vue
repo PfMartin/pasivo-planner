@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from '@/components/Button.vue';
 defineProps<{
   toNext: string;
   toBack: string;
@@ -7,12 +8,22 @@ defineProps<{
 
 <template>
   <div class="control-buttons">
-    <RouterLink class="back-button" v-if="toBack" :to="{ name: toBack }"
-      >Back</RouterLink
-    >
-    <RouterLink class="next-button" v-if="toNext" :to="{ name: toNext }"
-      >Next</RouterLink
-    >
+    <div class="back-button">
+      <Button
+        v-if="toBack"
+        :toName="toBack"
+        text="Back"
+        :iconConfig="{ name: 'fa-solid fa-chevron-left', position: 'left' }"
+      />
+    </div>
+    <div class="next-button">
+      <Button
+        v-if="toNext"
+        :toName="toNext"
+        text="Next"
+        :iconConfig="{ name: 'fa-solid fa-chevron-right', position: 'right' }"
+      />
+    </div>
   </div>
 </template>
 
@@ -20,30 +31,14 @@ defineProps<{
 .control-buttons {
   position: relative;
 
-  a {
-    background: #cee4c3;
-    // background: #68937c;
-    color: #091301;
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid #091301;
-    border-radius: 10px;
-    transition: background 0.2s;
+  .back-button {
+    position: absolute;
+    left: 0;
+  }
 
-    &.back-button {
-      position: absolute;
-      left: 0;
-    }
-
-    &.next-button {
-      position: absolute;
-      right: 0;
-    }
-
-    &:hover {
-      // background: #58836c;
-      background: #bed4b3;
-    }
+  .next-button {
+    position: absolute;
+    right: 0;
   }
 }
 </style>

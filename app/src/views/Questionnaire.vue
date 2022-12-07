@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
 const routeProgress: Record<string, number> = {
+  Home: 0,
   LifeSituation: 0,
   Profession: 20,
   Income: 40,

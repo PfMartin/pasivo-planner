@@ -23,7 +23,7 @@ const width = computed(() => {
   display: flex;
   justify-content: center;
   .bar {
-    width: 500px;
+    width: 700px;
     height: 10px;
     background: #eee;
     border-radius: 10px;
