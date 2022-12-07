@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h3>Life Situation</h3>
+  <h1>Life Situation</h1>
 </template>
