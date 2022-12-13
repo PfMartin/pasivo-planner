@@ -36,6 +36,7 @@ const buttonClass = computed(() => ({
 
 <style scoped lang="scss">
 @import '@/style/colors.scss';
+@import '@/style/outline.scss';
 
 .btn {
   font-size: 20px;
@@ -46,7 +47,7 @@ const buttonClass = computed(() => ({
   padding: 12px 40px;
   border-radius: 10px;
   color: $darkest-green;
-  box-shadow: 0px 12px 18px -6px rgb(0 0 0 / 30%);
+  box-shadow: $box-shadow;
   background: $neutral-grey;
   transition: background 0.3s;
   font-weight: 500;

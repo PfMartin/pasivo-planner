@@ -5,6 +5,7 @@ import ChildrenPanel from '@/components/ChildrenPanel.vue';
 import GamblingPanel from '@/components/GamblingPanel.vue';
 import SavingsPanel from '@/components/SavingsPanel.vue';
 import IncomePanel from '@/components/IncomePanel.vue';
+import ResultPanel from '@/components/ResultPanel.vue';
 import GoalsPanel from '@/components/GoalsPanel.vue';
 import RiskPanel from '@/components/RiskPanel.vue';
 
@@ -79,6 +80,14 @@ export const questionnaireRoutes = [
     component: GamblingPanel,
     meta: {
       id: 'gambling',
+    },
+  },
+  {
+    path: 'result',
+    name: 'Result',
+    component: ResultPanel,
+    meta: {
+      id: 'result',
     },
   },
 ];

@@ -30,7 +30,7 @@ const progress = computed(() => {
   const currentRoute = <string>route.name;
   const currentIndex = routes.value.indexOf(currentRoute);
 
-  return (currentIndex / routes.value.length) * 100;
+  return ((currentIndex + 1) / routes.value.length) * 100;
 });
 </script>
 
@@ -43,10 +43,15 @@ const progress = computed(() => {
 </template>
 
 <style scoped lang="scss">
+@import '@/style/colors.scss';
+@import '@/style/outline.scss';
 .content {
-  min-height: 300px;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: $neutral-grey;
+  margin: 1rem 0;
+  border-radius: 10px;
 }
 </style>
