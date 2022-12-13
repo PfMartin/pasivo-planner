@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h2>Savings</h2>
+  <div class="savings-panel"></div>
 </template>

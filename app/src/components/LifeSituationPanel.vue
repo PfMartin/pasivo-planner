@@ -36,5 +36,7 @@ const options: CardConfig[] = [
 </script>
 
 <template>
-  <div class="life-situation"></div>
+  <div class="life-situation-panel"></div>
 </template>
+
+<style scoped lang="scss"></style>

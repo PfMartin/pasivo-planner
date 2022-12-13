@@ -16,6 +16,7 @@ export const questionnaireRoutes = [
     component: LifeSituationPanel,
     meta: {
       id: 'lifeSituation',
+      headline: 'In welcher Lebensituation befindest du dich?',
     },
   },
   {
@@ -24,6 +25,7 @@ export const questionnaireRoutes = [
     component: ProfessionPanel,
     meta: {
       id: 'profession',
+      headline: 'Womit verdienst du hauptsächlich dein Geld?',
     },
   },
   {
@@ -32,6 +34,7 @@ export const questionnaireRoutes = [
     component: IncomePanel,
     meta: {
       id: 'income',
+      headline: 'Wie viel möchtest du sparen?',
     },
   },
   {
@@ -40,6 +43,7 @@ export const questionnaireRoutes = [
     component: SavingsPanel,
     meta: {
       id: 'savings',
+      headline: 'Hast du bereits Erspartes?',
     },
   },
   {
@@ -48,6 +52,7 @@ export const questionnaireRoutes = [
     component: ChildrenPanel,
     meta: {
       id: 'children',
+      headline: 'Wie viele Kinder hast du?',
     },
   },
   {
@@ -56,6 +61,7 @@ export const questionnaireRoutes = [
     component: GoalsPanel,
     meta: {
       id: 'goals',
+      headline: 'Wofür möchtest du Geld sparen und anlegen?',
     },
   },
   {
@@ -64,6 +70,8 @@ export const questionnaireRoutes = [
     component: RiskPanel,
     meta: {
       id: 'risk',
+      headline:
+        'Wie viel Risiko kannst und willst du für höhere Renditen eingehen?',
     },
   },
   {
@@ -72,6 +80,7 @@ export const questionnaireRoutes = [
     component: ManagementPanel,
     meta: {
       id: 'management',
+      headline: 'Wie möchtest du deine Geldanlage verwalten?',
     },
   },
   {
@@ -80,6 +89,8 @@ export const questionnaireRoutes = [
     component: GamblingPanel,
     meta: {
       id: 'gambling',
+      headline:
+        'Möchtest du zusätzlich mit riskanten Anlagen zocken oder spekulieren?',
     },
   },
   {
@@ -88,6 +99,7 @@ export const questionnaireRoutes = [
     component: ResultPanel,
     meta: {
       id: 'result',
+      headline: 'Ergebnisse',
     },
   },
 ];

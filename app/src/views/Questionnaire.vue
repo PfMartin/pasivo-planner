@@ -5,9 +5,14 @@ import ProgressBar from '@/components/ui/ProgressBar.vue';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
-const routes = computed(() => questionnaireRoutes.map((route) => route.name));
-
 const route = useRoute();
+const routes = computed(() => questionnaireRoutes.map((r) => r.name));
+const currentHeadline = computed(
+  () =>
+    questionnaireRoutes.find((r) => r.name === route.name)?.meta.headline ||
+    'Something went wrong'
+);
+
 const nextRoute = computed((): string => {
   const currentIndex = routes.value.indexOf(<string>route.name);
 
@@ -36,8 +41,11 @@ const progress = computed(() => {
 
 <template>
   <ProgressBar :progress="progress" />
-  <div class="content">
-    <RouterView />
+  <div class="panel">
+    <h2 class="headline">{{ currentHeadline }}</h2>
+    <div class="content">
+      <RouterView />
+    </div>
   </div>
   <ControlButtons :toBack="prevRoute" :toNext="nextRoute" />
 </template>
@@ -45,13 +53,20 @@ const progress = computed(() => {
 <style scoped lang="scss">
 @import '@/style/colors.scss';
 @import '@/style/outline.scss';
-.content {
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.panel {
   background: $neutral-grey;
   margin: 1rem 0;
   border-radius: $border-radius;
+  min-height: 50vh;
+
+  h2 {
+    padding: 1rem;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

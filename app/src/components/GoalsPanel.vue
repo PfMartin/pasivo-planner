@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h2>Goals</h2>
+  <div class="goals-panel"></div>
 </template>

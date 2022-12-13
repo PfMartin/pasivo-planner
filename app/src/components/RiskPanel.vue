@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h2>Risk</h2>
+  <div class="risk-panel"></div>
 </template>

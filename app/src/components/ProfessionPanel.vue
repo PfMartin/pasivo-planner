@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h2>Profession</h2>
+  <div class="profession-panel"></div>
 </template>
