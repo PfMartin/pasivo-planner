@@ -1,45 +1,36 @@
 <script setup lang="ts">
+import { questionnaireRoutes } from '@/router/questionnaire-routes';
 import ControlButtons from '@/components/ControlButtons.vue';
 import ProgressBar from '@/components/ProgressBar.vue';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
-const routeProgress: Record<string, number> = {
-  Home: 0,
-  LifeSituation: 10,
-  Profession: 20,
-  Income: 30,
-  Savings: 40,
-  Children: 50,
-  Goals: 60,
-  Risk: 70,
-  Management: 80,
-  Gambling: 90,
-  Ending: 100,
-};
+const routes = computed(() => questionnaireRoutes.map((route) => route.name));
 
 const route = useRoute();
 const nextRoute = computed((): string => {
-  const routes = Object.keys(routeProgress);
-  const currentIndex = routes.indexOf(<string>route.name);
+  const currentIndex = routes.value.indexOf(<string>route.name);
 
-  return currentIndex === routes.length - 1 ? '' : routes[currentIndex + 1];
+  return currentIndex === routes.value.length - 1
+    ? ''
+    : routes.value[currentIndex + 1];
 });
 
 const prevRoute = computed((): string => {
-  const routes = Object.keys(routeProgress);
-  const currentIndex = routes.indexOf(<string>route.name);
+  const currentIndex = routes.value.indexOf(<string>route.name);
 
   if (currentIndex === 0) {
     return '';
   }
 
-  return routes[currentIndex - 1];
+  return routes.value[currentIndex - 1];
 });
 
 const progress = computed(() => {
-  const name = <string>route.name;
-  return routeProgress[name];
+  const currentRoute = <string>route.name;
+  const currentIndex = routes.value.indexOf(currentRoute);
+
+  return (currentIndex / routes.value.length) * 100;
 });
 </script>
 
