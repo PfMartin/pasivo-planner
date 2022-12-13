@@ -20,7 +20,7 @@ const prevRoute = computed((): string => {
   const currentIndex = routes.value.indexOf(<string>route.name);
 
   if (currentIndex === 0) {
-    return '';
+    return 'Home';
   }
 
   return routes.value[currentIndex - 1];
@@ -46,12 +46,12 @@ const progress = computed(() => {
 @import '@/style/colors.scss';
 @import '@/style/outline.scss';
 .content {
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: $neutral-grey;
   margin: 1rem 0;
-  border-radius: 10px;
+  border-radius: $border-radius;
 }
 </style>

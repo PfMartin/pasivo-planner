@@ -20,6 +20,7 @@ const width = computed(() => {
 
 <style scoped lang="scss">
 @import '@/style/colors.scss';
+@import '@/style/outline.scss';
 .progress-bar {
   display: flex;
   justify-content: center;
@@ -27,9 +28,9 @@ const width = computed(() => {
     width: 700px;
     height: 10px;
     background: $neutral-grey;
-    border-radius: 10px;
+    border-radius: $border-radius;
     .progress {
-      border-radius: 10px;
+      border-radius: $border-radius;
       width: 0%;
       height: 100%;
       background: $light-green;

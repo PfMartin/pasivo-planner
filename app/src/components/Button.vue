@@ -45,7 +45,7 @@ const buttonClass = computed(() => ({
   justify-content: space-between;
   text-decoration: none;
   padding: 12px 40px;
-  border-radius: 10px;
+  border-radius: $border-radius;
   color: $darkest-green;
   box-shadow: $box-shadow;
   background: $neutral-grey;
