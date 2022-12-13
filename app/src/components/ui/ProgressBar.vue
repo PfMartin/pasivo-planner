@@ -19,19 +19,21 @@ const width = computed(() => {
 </template>
 
 <style scoped lang="scss">
+@import '@/style/colors.scss';
+@import '@/style/outline.scss';
 .progress-bar {
   display: flex;
   justify-content: center;
   .bar {
-    width: 700px;
+    width: 1000px;
     height: 10px;
-    background: #eee;
-    border-radius: 10px;
+    background: $neutral-grey;
+    border-radius: $border-radius;
     .progress {
-      border-radius: 10px;
+      border-radius: $border-radius;
       width: 0%;
       height: 100%;
-      background: #68937c;
+      background: $light-green;
       transition: width 0.6s ease-out;
     }
   }

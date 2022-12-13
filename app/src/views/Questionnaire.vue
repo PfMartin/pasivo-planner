@@ -1,56 +1,72 @@
 <script setup lang="ts">
-import ControlButtons from '@/components/ControlButtons.vue';
-import ProgressBar from '@/components/ProgressBar.vue';
+import { questionnaireRoutes } from '@/router/questionnaire-routes';
+import ControlButtons from '@/components/ui/ControlButtons.vue';
+import ProgressBar from '@/components/ui/ProgressBar.vue';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
-const routeProgress: Record<string, number> = {
-  Home: 0,
-  LifeSituation: 0,
-  Profession: 20,
-  Income: 40,
-  Savings: 60,
-  Children: 80,
-};
-
 const route = useRoute();
-const nextRoute = computed((): string => {
-  const routes = Object.keys(routeProgress);
-  const currentIndex = routes.indexOf(<string>route.name);
+const routes = computed(() => questionnaireRoutes.map((r) => r.name));
+const currentHeadline = computed(
+  () =>
+    questionnaireRoutes.find((r) => r.name === route.name)?.meta.headline ||
+    'Something went wrong'
+);
 
-  return currentIndex === routes.length - 1 ? '' : routes[currentIndex + 1];
+const nextRoute = computed((): string => {
+  const currentIndex = routes.value.indexOf(<string>route.name);
+
+  return currentIndex === routes.value.length - 1
+    ? ''
+    : routes.value[currentIndex + 1];
 });
 
 const prevRoute = computed((): string => {
-  const routes = Object.keys(routeProgress);
-  const currentIndex = routes.indexOf(<string>route.name);
+  const currentIndex = routes.value.indexOf(<string>route.name);
 
   if (currentIndex === 0) {
-    return '';
+    return 'Home';
   }
 
-  return routes[currentIndex - 1];
+  return routes.value[currentIndex - 1];
 });
 
 const progress = computed(() => {
-  const name = <string>route.name;
-  return routeProgress[name];
+  const currentRoute = <string>route.name;
+  const currentIndex = routes.value.indexOf(currentRoute);
+
+  return ((currentIndex + 1) / routes.value.length) * 100;
 });
 </script>
 
 <template>
   <ProgressBar :progress="progress" />
-  <div class="content">
-    <RouterView />
+  <div class="panel">
+    <h2 class="headline">{{ currentHeadline }}</h2>
+    <div class="content">
+      <RouterView />
+    </div>
   </div>
   <ControlButtons :toBack="prevRoute" :toNext="nextRoute" />
 </template>
 
 <style scoped lang="scss">
-.content {
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import '@/style/colors.scss';
+@import '@/style/outline.scss';
+
+.panel {
+  background: $neutral-grey;
+  margin: 1rem 0;
+  border-radius: $border-radius;
+  min-height: 50vh;
+
+  h2 {
+    padding: 1rem;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

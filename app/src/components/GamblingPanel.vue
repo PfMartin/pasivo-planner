@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="children-panel"></div>
+  <div class="gambling-panel"></div>
 </template>

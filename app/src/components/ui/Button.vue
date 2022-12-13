@@ -1,18 +1,26 @@
 <script setup lang="ts">
+import { computed, onMounted } from 'vue';
+
 interface IconConfig {
   name: string;
   position: string;
 }
 
-defineProps<{
+const props = defineProps<{
   toName: string;
   text: string;
   iconConfig?: IconConfig;
+  primary?: boolean;
 }>();
+
+const buttonClass = computed(() => ({
+  btn: true,
+  primary: props.primary || false,
+}));
 </script>
 
 <template>
-  <RouterLink class="button" :to="{ name: toName }"
+  <RouterLink :class="buttonClass" :to="{ name: toName }"
     ><font-awesome-icon
       v-if="iconConfig && iconConfig.position === 'left'"
       :icon="iconConfig.name" /><span class="button-text">{{ text }}</span
@@ -23,22 +31,33 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-a {
+@import '@/style/colors.scss';
+@import '@/style/outline.scss';
+
+.btn {
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #cee4c3;
-  // background: #68937c;
-  color: #091301;
   text-decoration: none;
-  padding: 0.5rem 1.5rem;
-  border: 1px solid #091301;
-  border-radius: 10px;
-  transition: background 0.2s;
+  padding: 12px 40px;
+  border-radius: $border-radius;
+  color: $darkest-green;
+  box-shadow: $box-shadow;
+  background: $neutral-grey;
+  transition: background 0.3s;
+  font-weight: 500;
 
   &:hover {
-    // background: #58836c;
-    background: #bed4b3;
+    background: $darker-grey;
+  }
+
+  &.primary {
+    background: $light-green;
+
+    &:hover {
+      background: $light-green-darker;
+    }
   }
 
   .button-text {

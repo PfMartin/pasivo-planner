@@ -11,18 +11,19 @@
 </template>
 
 <style scoped lang="scss">
+@import '@/style/colors.scss';
 .app {
   margin-top: 2rem;
 
   .line {
-    background: #cee4c3;
+    background: $light-green;
     height: 2px;
     width: 100%;
   }
 
   .content {
     margin: 2rem auto;
-    max-width: 700px;
+    max-width: 1000px;
   }
 }
 </style>
