@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '@/components/Button.vue';
+import Button from '@/components/ui/Button.vue';
 
 const iconConfig = {
   name: 'fa-solid fa-chevron-right',

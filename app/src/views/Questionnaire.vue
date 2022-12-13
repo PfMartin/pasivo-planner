@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { questionnaireRoutes } from '@/router/questionnaire-routes';
-import ControlButtons from '@/components/ControlButtons.vue';
-import ProgressBar from '@/components/ProgressBar.vue';
+import ControlButtons from '@/components/ui/ControlButtons.vue';
+import ProgressBar from '@/components/ui/ProgressBar.vue';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 

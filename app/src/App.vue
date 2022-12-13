@@ -23,7 +23,7 @@
 
   .content {
     margin: 2rem auto;
-    max-width: 700px;
+    max-width: 1000px;
   }
 }
 </style>
