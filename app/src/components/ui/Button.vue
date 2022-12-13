@@ -13,10 +13,6 @@ const props = defineProps<{
   primary?: boolean;
 }>();
 
-onMounted(() => {
-  console.log(props.primary);
-});
-
 const buttonClass = computed(() => ({
   btn: true,
   primary: props.primary || false,

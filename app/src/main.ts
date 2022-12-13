@@ -1,8 +1,8 @@
 import FontAwesomeIcon from '@/assets/icons';
 import { createApp } from 'vue';
 import router from '@/router';
-import '@/style/style.scss';
 import App from '@/App.vue';
+import '@/style/main.scss';
 
 createApp(App)
   .use(router)
