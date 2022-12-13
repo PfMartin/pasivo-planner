@@ -59,8 +59,7 @@ const buttonClass = computed(() => ({
     background: $light-green;
 
     &:hover {
-      background: $mid-green;
-      color: $text-light;
+      background: $light-green-darker;
     }
   }
 

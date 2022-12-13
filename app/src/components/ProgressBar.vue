@@ -32,7 +32,7 @@ const width = computed(() => {
       border-radius: 10px;
       width: 0%;
       height: 100%;
-      background: $mid-green;
+      background: $light-green;
       transition: width 0.6s ease-out;
     }
   }

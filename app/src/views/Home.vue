@@ -21,6 +21,7 @@ const iconConfig = {
         toName="LifeSituation"
         text="Los Geht's"
         :iconConfig="iconConfig"
+        primary
       />
     </div>
   </div>

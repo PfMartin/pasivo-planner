@@ -6,11 +6,16 @@ import { computed } from 'vue';
 
 const routeProgress: Record<string, number> = {
   Home: 0,
-  LifeSituation: 0,
+  LifeSituation: 10,
   Profession: 20,
-  Income: 40,
-  Savings: 60,
-  Children: 80,
+  Income: 30,
+  Savings: 40,
+  Children: 50,
+  Goals: 60,
+  Risk: 70,
+  Management: 80,
+  Gambling: 90,
+  Ending: 100,
 };
 
 const route = useRoute();

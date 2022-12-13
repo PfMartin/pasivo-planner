@@ -1,10 +1,15 @@
 import LifeSituationPanel from '@/components/LifeSituationPanel.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import ProfessionPanel from '@/components/ProfessionPanel.vue';
+import ManagementPanel from '@/components/ManagementPanel.vue';
 import ChildrenPanel from '@/components/ChildrenPanel.vue';
+import GamblingPanel from '@/components/GamblingPanel.vue';
 import SavingsPanel from '@/components/SavingsPanel.vue';
 import IncomePanel from '@/components/IncomePanel.vue';
 import Questionnaire from '@/views/Questionnaire.vue';
+import GoalsPanel from '@/components/GoalsPanel.vue';
+import RiskPanel from '@/components/RiskPanel.vue';
+import Ending from '@/components/Ending.vue';
 import Home from '@/views/Home.vue';
 
 const routes = [
@@ -52,6 +57,46 @@ const routes = [
         component: ChildrenPanel,
         meta: {
           id: 'children',
+        },
+      },
+      {
+        path: 'goals',
+        name: 'Goals',
+        component: GoalsPanel,
+        meta: {
+          id: 'goals',
+        },
+      },
+      {
+        path: 'risk',
+        name: 'Risk',
+        component: RiskPanel,
+        meta: {
+          id: 'risk',
+        },
+      },
+      {
+        path: 'management',
+        name: 'Management',
+        component: ManagementPanel,
+        meta: {
+          id: 'management',
+        },
+      },
+      {
+        path: 'gambling',
+        name: 'Gambling',
+        component: GamblingPanel,
+        meta: {
+          id: 'gambling',
+        },
+      },
+      {
+        path: 'ending',
+        name: 'Ending',
+        component: Ending,
+        meta: {
+          id: 'ending',
         },
       },
     ],
