@@ -11,11 +11,12 @@
 </template>
 
 <style scoped lang="scss">
+@import '@/style/colors.scss';
 .app {
   margin-top: 2rem;
 
   .line {
-    background: #cee4c3;
+    background: $light-green;
     height: 2px;
     width: 100%;
   }

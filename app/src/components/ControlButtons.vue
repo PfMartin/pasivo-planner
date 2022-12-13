@@ -15,7 +15,7 @@ const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
       <Button
         v-if="toBack"
         :toName="toBack"
-        text="Back"
+        text="Zurück"
         :iconConfig="backIconConfig"
       />
     </div>
@@ -23,8 +23,9 @@ const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
       <Button
         v-if="toNext"
         :toName="toNext"
-        text="Next"
+        text="Weiter"
         :iconConfig="nextIconConfig"
+        primary
       />
     </div>
   </div>
