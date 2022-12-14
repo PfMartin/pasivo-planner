@@ -5,7 +5,12 @@ export interface CardConfig {
   title: string;
   detail?: string;
   pictureUrl: string;
+  value: number;
 }
+
+const emit = defineEmits<{
+  (e: 'select', value: number): void;
+}>();
 
 const props = defineProps<{
   isSelected: boolean;
@@ -24,8 +29,8 @@ const picture = computed(() => {
 </script>
 
 <template>
-  <div :class="optionCard">
-    <img :src="picture" alt="Working people" />
+  <div @click="emit('select', cardConfig.value)" :class="optionCard">
+    <img :src="picture" :alt="cardConfig.title" />
     <div class="card-content">
       <h3>{{ cardConfig.title }}</h3>
       <p>{{ cardConfig.detail }}</p>

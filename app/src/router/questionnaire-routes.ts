@@ -15,7 +15,7 @@ export const questionnaireRoutes = [
     name: 'LifeSituation',
     component: LifeSituationPanel,
     meta: {
-      id: 'lifeSituation',
+      isLink: true,
       headline: 'In welcher Lebensituation befindest du dich?',
     },
   },
@@ -24,7 +24,7 @@ export const questionnaireRoutes = [
     name: 'Profession',
     component: ProfessionPanel,
     meta: {
-      id: 'profession',
+      isLink: true,
       headline: 'Womit verdienst du hauptsächlich dein Geld?',
     },
   },
@@ -33,7 +33,7 @@ export const questionnaireRoutes = [
     name: 'Income',
     component: IncomePanel,
     meta: {
-      id: 'income',
+      isLink: true,
       headline: 'Wie viel möchtest du sparen?',
     },
   },
@@ -42,7 +42,7 @@ export const questionnaireRoutes = [
     name: 'Savings',
     component: SavingsPanel,
     meta: {
-      id: 'savings',
+      isLink: true,
       headline: 'Hast du bereits Erspartes?',
     },
   },
@@ -51,7 +51,7 @@ export const questionnaireRoutes = [
     name: 'Children',
     component: ChildrenPanel,
     meta: {
-      id: 'children',
+      isLink: true,
       headline: 'Wie viele Kinder hast du?',
     },
   },
@@ -60,7 +60,7 @@ export const questionnaireRoutes = [
     name: 'Goals',
     component: GoalsPanel,
     meta: {
-      id: 'goals',
+      isLink: true,
       headline: 'Wofür möchtest du Geld sparen und anlegen?',
     },
   },
@@ -69,7 +69,7 @@ export const questionnaireRoutes = [
     name: 'Risk',
     component: RiskPanel,
     meta: {
-      id: 'risk',
+      isLink: true,
       headline:
         'Wie viel Risiko kannst und willst du für höhere Renditen eingehen?',
     },
@@ -79,7 +79,7 @@ export const questionnaireRoutes = [
     name: 'Management',
     component: ManagementPanel,
     meta: {
-      id: 'management',
+      isLink: true,
       headline: 'Wie möchtest du deine Geldanlage verwalten?',
     },
   },
@@ -88,7 +88,7 @@ export const questionnaireRoutes = [
     name: 'Gambling',
     component: GamblingPanel,
     meta: {
-      id: 'gambling',
+      isLink: true,
       headline:
         'Möchtest du zusätzlich mit riskanten Anlagen zocken oder spekulieren?',
     },
@@ -98,7 +98,7 @@ export const questionnaireRoutes = [
     name: 'Result',
     component: ResultPanel,
     meta: {
-      id: 'result',
+      isLink: false,
       headline: 'Ergebnisse',
     },
   },
