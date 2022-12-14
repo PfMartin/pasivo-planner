@@ -33,16 +33,8 @@ const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
 
 <style scoped lang="scss">
 .control-buttons {
-  position: relative;
-
-  .back-button {
-    position: absolute;
-    left: 0;
-  }
-
-  .next-button {
-    position: absolute;
-    right: 0;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 </style>

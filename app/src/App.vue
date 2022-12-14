@@ -3,6 +3,7 @@
 <template>
   <div class="app">
     <h1>Pasivo Planner</h1>
+    <p>Interaktiver Ratgeber zur Finanzplanung - v0.0.1</p>
     <div class="line"></div>
     <div class="content">
       <RouterView />
@@ -13,8 +14,16 @@
 <style scoped lang="scss">
 @import '@/style/colors.scss';
 .app {
-  margin-top: 2rem;
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
 
+  p {
+    color: $muted-grey;
+    padding: 0;
+    margin: 0.5rem;
+  }
   .line {
     background: $light-green;
     height: 2px;
@@ -22,7 +31,7 @@
   }
 
   .content {
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     max-width: 1000px;
   }
 }

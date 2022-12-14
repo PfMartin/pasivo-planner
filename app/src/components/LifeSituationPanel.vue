@@ -3,40 +3,62 @@ import OptionCard, { CardConfig } from '@/components/ui/OptionCard.vue';
 
 const options: CardConfig[] = [
   {
-    name: 'Schüler Student',
+    title: 'Schüler Student',
     detail: 'in Schule, Studium oder Ausbildung',
-    icon: 'student',
+    pictureUrl: 'undraw/student.svg',
   },
   {
-    name: 'Berufseinsteiger',
+    title: 'Berufseinsteiger',
     detail: 'start in den Beruf gemeistert',
-    icon: 'student',
+    pictureUrl: 'undraw/starting-to-work.svg',
   },
   {
-    name: 'Mitten im Leben',
+    title: 'Mitten im Leben',
     detail: 'ca. 30 - 50 Jahre',
-    icon: 'student',
+    pictureUrl: 'undraw/work.svg',
   },
   {
-    name: 'Kurz vor der Rente',
+    title: 'Kurz vor der Rente',
     detail: 'ca. 50 - 65',
-    icon: 'student',
+    pictureUrl: 'undraw/almost-retired.svg',
   },
   {
-    name: 'Rentner',
+    title: 'Rentner',
     detail: 'älter als 65',
-    icon: 'student',
+    pictureUrl: 'undraw/retired.svg',
   },
   {
-    name: 'Es ist kompliziert',
+    title: 'Es ist kompliziert',
     detail: 'keins trifft zu',
-    icon: 'student',
+    pictureUrl: 'undraw/dont-know.svg',
   },
 ];
 </script>
 
 <template>
-  <div class="life-situation-panel"></div>
+  <div class="life-situation-panel">
+    <OptionCard
+      v-for="option in options"
+      :key="option.title"
+      :cardConfig="option"
+      :isSelected="false"
+    />
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.life-situation-panel {
+  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 750px) {
+  .life-situation-panel {
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+  }
+}
+</style>
