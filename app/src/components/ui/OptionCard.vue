@@ -40,7 +40,7 @@ const picture = computed(() => {
   border: 2px solid $light-green;
   border-radius: $border-radius;
   background: $text-light;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -64,9 +64,22 @@ const picture = computed(() => {
     align-items: center;
     width: 100%;
 
+    h3 {
+      padding: 0.5rem;
+      margin: 0;
+    }
+
     p {
       margin: 0;
       padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .option-card {
+    img {
+      height: 70px;
     }
   }
 }

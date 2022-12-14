@@ -35,12 +35,12 @@ const buttonClass = computed(() => ({
 @import '@/style/outline.scss';
 
 .btn {
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  padding: 12px 40px;
+  padding: 10px 35px;
   border-radius: $border-radius;
   color: $darkest-green;
   box-shadow: $box-shadow;

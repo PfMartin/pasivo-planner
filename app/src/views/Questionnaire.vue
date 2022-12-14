@@ -43,7 +43,7 @@ const progress = computed(() => {
   <ProgressBar :progress="progress" />
   <ControlButtons :toBack="prevRoute" :toNext="nextRoute" />
   <div class="panel">
-    <h2 class="headline">{{ currentHeadline }}</h2>
+    <h3 class="headline">{{ currentHeadline }}</h3>
     <div class="content">
       <RouterView />
     </div>
@@ -56,12 +56,10 @@ const progress = computed(() => {
 
 .panel {
   background: $neutral-grey;
-  margin: 1rem 0;
   border-radius: $border-radius;
+  margin-top: 1rem;
+  padding: 0.5rem 0.5rem;
 
-  h2 {
-    padding: 1rem;
-  }
   .content {
     display: flex;
     align-items: center;

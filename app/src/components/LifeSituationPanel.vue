@@ -5,12 +5,12 @@ const options: CardConfig[] = [
   {
     title: 'Schüler Student',
     detail: 'in Schule, Studium oder Ausbildung',
-    pictureUrl: 'undraw/work.svg',
+    pictureUrl: 'undraw/student.svg',
   },
   {
     title: 'Berufseinsteiger',
     detail: 'start in den Beruf gemeistert',
-    pictureUrl: 'undraw/work.svg',
+    pictureUrl: 'undraw/starting-to-work.svg',
   },
   {
     title: 'Mitten im Leben',
@@ -20,17 +20,17 @@ const options: CardConfig[] = [
   {
     title: 'Kurz vor der Rente',
     detail: 'ca. 50 - 65',
-    pictureUrl: 'undraw/work.svg',
+    pictureUrl: 'undraw/almost-retired.svg',
   },
   {
     title: 'Rentner',
     detail: 'älter als 65',
-    pictureUrl: 'undraw/work.svg',
+    pictureUrl: 'undraw/retired.svg',
   },
   {
     title: 'Es ist kompliziert',
     detail: 'keins trifft zu',
-    pictureUrl: 'undraw/work.svg',
+    pictureUrl: 'undraw/dont-know.svg',
   },
 ];
 </script>
@@ -48,10 +48,17 @@ const options: CardConfig[] = [
 
 <style scoped lang="scss">
 .life-situation-panel {
-  margin: 1rem;
+  margin: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   width: 100%;
+}
+
+@media screen and (max-width: 750px) {
+  .life-situation-panel {
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+  }
 }
 </style>
