@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import OptionCard, { CardConfig } from '@/components/ui/OptionCard.vue';
+import store from '@/store';
 
 const options: CardConfig[] = [
   {
@@ -41,7 +42,8 @@ const options: CardConfig[] = [
 ];
 
 const storeValue = (value: number) => {
-  console.log(value);
+  store.dispatch('setLifeSituation', value);
+  console.log(store.getters.lifeSituation);
 };
 </script>
 
