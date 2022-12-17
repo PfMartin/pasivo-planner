@@ -33,8 +33,8 @@ export const questionnaireRoutes = [
     name: 'Income',
     component: IncomePanel,
     meta: {
-      isLink: true,
-      headline: 'Wie viel möchtest du sparen?',
+      isLink: false,
+      headline: 'Wie hoch ist dein derzeitiges Einkommen?',
     },
   },
   {
@@ -42,7 +42,7 @@ export const questionnaireRoutes = [
     name: 'Savings',
     component: SavingsPanel,
     meta: {
-      isLink: true,
+      isLink: false,
       headline: 'Hast du bereits Erspartes?',
     },
   },
@@ -55,15 +55,15 @@ export const questionnaireRoutes = [
       headline: 'Wie viele Kinder hast du?',
     },
   },
-  {
-    path: 'goals',
-    name: 'Goals',
-    component: GoalsPanel,
-    meta: {
-      isLink: true,
-      headline: 'Wofür möchtest du Geld sparen und anlegen?',
-    },
-  },
+  // {
+  //   path: 'goals',
+  //   name: 'Goals',
+  //   component: GoalsPanel,
+  //   meta: {
+  //     isLink: true,
+  //     headline: 'Wofür möchtest du Geld sparen und anlegen?',
+  //   },
+  // },
   {
     path: 'risk',
     name: 'Risk',
@@ -83,16 +83,16 @@ export const questionnaireRoutes = [
       headline: 'Wie möchtest du deine Geldanlage verwalten?',
     },
   },
-  {
-    path: 'gambling',
-    name: 'Gambling',
-    component: GamblingPanel,
-    meta: {
-      isLink: true,
-      headline:
-        'Möchtest du zusätzlich mit riskanten Anlagen zocken oder spekulieren?',
-    },
-  },
+  // {
+  //   path: 'gambling',
+  //   name: 'Gambling',
+  //   component: GamblingPanel,
+  //   meta: {
+  //     isLink: true,
+  //     headline:
+  //       'Möchtest du zusätzlich mit riskanten Anlagen zocken oder spekulieren?',
+  //   },
+  // },
   {
     path: 'result',
     name: 'Result',

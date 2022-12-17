@@ -4,7 +4,7 @@ import { computed } from 'vue';
 export interface CardConfig {
   title: string;
   detail?: string;
-  pictureUrl: string;
+  pictureUrl?: string;
   value: number;
 }
 
@@ -22,15 +22,17 @@ const optionCard = computed(() => ({
   selected: props.isSelected || false,
 }));
 
-const picture = computed(() => {
-  return new URL(`../../assets/${props.cardConfig.pictureUrl}`, import.meta.url)
-    .href;
+const picture = computed((): string => {
+  return props.cardConfig.pictureUrl
+    ? new URL(`../../assets/${props.cardConfig.pictureUrl}`, import.meta.url)
+        .href
+    : '';
 });
 </script>
 
 <template>
   <div @click="emit('select', cardConfig.value)" :class="optionCard">
-    <img :src="picture" :alt="cardConfig.title" />
+    <img v-if="picture" :src="picture" :alt="cardConfig.title" />
     <div class="card-content">
       <h3>{{ cardConfig.title }}</h3>
       <p>{{ cardConfig.detail }}</p>

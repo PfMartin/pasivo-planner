@@ -42,9 +42,7 @@ const options: CardConfig[] = [
 ];
 
 const storeValue = (value: number) => {
-  console.log(`adding value for lifeSituation: ${value}`);
   store.dispatch('pushRating', value);
-  console.log(store.getters.ratings);
 };
 </script>
 
