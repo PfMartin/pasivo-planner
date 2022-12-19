@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import OptionCard, { CardConfig } from '@/components/ui/OptionCard.vue';
+import PanelFrame from '@/components/ui/PanelFrame.vue';
 import store from '@/store';
 
 const options: CardConfig[] = [
@@ -48,35 +49,19 @@ const storeValue = (value: number) => {
 
 <template>
   <div class="life-situation-panel">
-    <RouterLink :to="{ name: 'Profession' }" v-for="option in options">
-      <OptionCard
-        :key="option.title"
-        :cardConfig="option"
-        :isSelected="false"
-        @select="storeValue"
-      />
-    </RouterLink>
+    <PanelFrame>
+      <template v-slot:panel-content>
+        <RouterLink :to="{ name: 'Profession' }" v-for="option in options">
+          <OptionCard
+            :key="option.title"
+            :cardConfig="option"
+            :isSelected="false"
+            @select="storeValue"
+          />
+        </RouterLink>
+      </template>
+    </PanelFrame>
   </div>
 </template>
 
-<style scoped lang="scss">
-.life-situation-panel {
-  margin: 0.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-  width: 100%;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .life-situation-panel {
-    grid-template-columns: 1fr;
-    grid-gap: 0.5rem;
-  }
-}
-</style>
+<style scoped lang="scss"></style>
