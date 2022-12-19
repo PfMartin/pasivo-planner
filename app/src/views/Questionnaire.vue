@@ -14,6 +14,10 @@ const currentHeadline = computed(
 );
 
 const nextRoute = computed((): string => {
+  if (route.meta.isLink) {
+    return '';
+  }
+
   const currentIndex = routes.value.indexOf(<string>route.name);
 
   return currentIndex === routes.value.length - 1

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue';
+import { computed } from 'vue';
 
 interface IconConfig {
   name: string;
@@ -13,6 +13,10 @@ const props = defineProps<{
   primary?: boolean;
 }>();
 
+const emit = defineEmits<{
+  (e: 'button-click'): void;
+}>();
+
 const buttonClass = computed(() => ({
   btn: true,
   primary: props.primary || false,
@@ -20,7 +24,10 @@ const buttonClass = computed(() => ({
 </script>
 
 <template>
-  <RouterLink :class="buttonClass" :to="{ name: toName }"
+  <RouterLink
+    @click="emit('button-click')"
+    :class="buttonClass"
+    :to="{ name: toName }"
     ><font-awesome-icon
       v-if="iconConfig && iconConfig.position === 'left'"
       :icon="iconConfig.name" /><span class="button-text">{{ text }}</span

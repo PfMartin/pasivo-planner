@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue';
+import store from '@/store';
+
 defineProps<{
   toNext: string;
   toBack: string;
 }>();
+
+const popRating = () => {
+  store.dispatch('popRating');
+};
 
 const backIconConfig = { name: 'fa-solid fa-chevron-left', position: 'left' };
 const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
@@ -13,6 +19,7 @@ const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
   <div class="control-buttons">
     <div class="back-button">
       <Button
+        @button-click="popRating"
         v-if="toBack"
         :toName="toBack"
         text="Zurück"

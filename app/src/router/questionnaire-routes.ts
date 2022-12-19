@@ -15,7 +15,7 @@ export const questionnaireRoutes = [
     name: 'LifeSituation',
     component: LifeSituationPanel,
     meta: {
-      id: 'lifeSituation',
+      isLink: true,
       headline: 'In welcher Lebensituation befindest du dich?',
     },
   },
@@ -24,7 +24,7 @@ export const questionnaireRoutes = [
     name: 'Profession',
     component: ProfessionPanel,
     meta: {
-      id: 'profession',
+      isLink: true,
       headline: 'Womit verdienst du hauptsächlich dein Geld?',
     },
   },
@@ -33,8 +33,8 @@ export const questionnaireRoutes = [
     name: 'Income',
     component: IncomePanel,
     meta: {
-      id: 'income',
-      headline: 'Wie viel möchtest du sparen?',
+      isLink: false,
+      headline: 'Wie hoch ist dein derzeitiges Einkommen?',
     },
   },
   {
@@ -42,7 +42,7 @@ export const questionnaireRoutes = [
     name: 'Savings',
     component: SavingsPanel,
     meta: {
-      id: 'savings',
+      isLink: false,
       headline: 'Hast du bereits Erspartes?',
     },
   },
@@ -51,25 +51,25 @@ export const questionnaireRoutes = [
     name: 'Children',
     component: ChildrenPanel,
     meta: {
-      id: 'children',
+      isLink: true,
       headline: 'Wie viele Kinder hast du?',
     },
   },
-  {
-    path: 'goals',
-    name: 'Goals',
-    component: GoalsPanel,
-    meta: {
-      id: 'goals',
-      headline: 'Wofür möchtest du Geld sparen und anlegen?',
-    },
-  },
+  // {
+  //   path: 'goals',
+  //   name: 'Goals',
+  //   component: GoalsPanel,
+  //   meta: {
+  //     isLink: true,
+  //     headline: 'Wofür möchtest du Geld sparen und anlegen?',
+  //   },
+  // },
   {
     path: 'risk',
     name: 'Risk',
     component: RiskPanel,
     meta: {
-      id: 'risk',
+      isLink: true,
       headline:
         'Wie viel Risiko kannst und willst du für höhere Renditen eingehen?',
     },
@@ -79,26 +79,26 @@ export const questionnaireRoutes = [
     name: 'Management',
     component: ManagementPanel,
     meta: {
-      id: 'management',
+      isLink: true,
       headline: 'Wie möchtest du deine Geldanlage verwalten?',
     },
   },
-  {
-    path: 'gambling',
-    name: 'Gambling',
-    component: GamblingPanel,
-    meta: {
-      id: 'gambling',
-      headline:
-        'Möchtest du zusätzlich mit riskanten Anlagen zocken oder spekulieren?',
-    },
-  },
+  // {
+  //   path: 'gambling',
+  //   name: 'Gambling',
+  //   component: GamblingPanel,
+  //   meta: {
+  //     isLink: true,
+  //     headline:
+  //       'Möchtest du zusätzlich mit riskanten Anlagen zocken oder spekulieren?',
+  //   },
+  // },
   {
     path: 'result',
     name: 'Result',
     component: ResultPanel,
     meta: {
-      id: 'result',
+      isLink: false,
       headline: 'Ergebnisse',
     },
   },
