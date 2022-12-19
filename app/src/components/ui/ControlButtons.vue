@@ -8,9 +8,7 @@ defineProps<{
 }>();
 
 const popRating = () => {
-  console.log('removing last value');
   store.dispatch('popRating');
-  console.log(store.getters.ratings);
 };
 
 const backIconConfig = { name: 'fa-solid fa-chevron-left', position: 'left' };

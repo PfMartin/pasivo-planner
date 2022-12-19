@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import OptionCard, { CardConfig } from '@/components/ui/OptionCard.vue';
-import PanelFrame from './ui/PanelFrame.vue';
+import PanelFrame from '@/components/ui/PanelFrame.vue';
 import store from '@/store';
 
 const options: CardConfig[] = [
