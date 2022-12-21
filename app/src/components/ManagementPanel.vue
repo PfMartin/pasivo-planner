@@ -18,6 +18,7 @@ const options: CardConfig[] = [
 
 const storeValue = (value: number) => {
   store.dispatch('pushRating', { management: value });
+  console.log(store.getters.results);
 };
 </script>
 

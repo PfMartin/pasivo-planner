@@ -13,7 +13,7 @@ watch(income, () => {
 <template>
   <div class="income-panel">
     <label for="income"> Einkommen </label>
-    <input v-model="income" id="income" />
+    <input v-model.number="income" id="income" />
     €
   </div>
 </template>
