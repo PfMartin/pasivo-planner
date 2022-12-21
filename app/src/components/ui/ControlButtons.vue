@@ -7,10 +7,6 @@ defineProps<{
   toBack: string;
 }>();
 
-const popRating = () => {
-  store.dispatch('popRating');
-};
-
 const backIconConfig = { name: 'fa-solid fa-chevron-left', position: 'left' };
 const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
 </script>
@@ -19,7 +15,6 @@ const nextIconConfig = { name: 'fa-solid fa-chevron-right', position: 'right' };
   <div class="control-buttons">
     <div class="back-button">
       <Button
-        @button-click="popRating"
         v-if="toBack"
         :toName="toBack"
         text="Zurück"

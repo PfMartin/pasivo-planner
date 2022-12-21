@@ -1,32 +1,44 @@
 import { createStore, ActionContext } from 'vuex';
+import VuexPersistence from 'vuex-persist';
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+});
 
 interface State {
-  ratings: number[];
+  results: Record<string, number>;
 }
 
 export default createStore({
   state: {
-    ratings: [],
+    results: {},
   },
   mutations: {
-    pushRating(state: State, rating: number): void {
-      state.ratings.push(rating);
+    pushRating(state: State, rating: Record<string, number>): void {
+      state.results = {
+        ...state.results,
+        ...rating,
+      };
     },
-    popRating(state: State): void {
-      state.ratings.pop();
+    popRating(state: State, property: string): void {
+      delete state.results[property];
     },
   },
   actions: {
-    pushRating(store: ActionContext<State, State>, value: number): void {
-      store.commit('pushRating', value);
+    pushRating(
+      store: ActionContext<State, State>,
+      rating: Record<string, number>
+    ): void {
+      store.commit('pushRating', rating);
     },
-    popRating(store: ActionContext<State, State>): void {
-      store.commit('popRating');
+    popRating(store: ActionContext<State, State>, property: string): void {
+      store.commit('popRating', property);
     },
   },
   getters: {
-    ratings(state: State): number[] {
-      return state.ratings;
+    results(state: State): Record<string, number> {
+      return state.results;
     },
   },
+  plugins: [vuexLocal.plugin],
 });

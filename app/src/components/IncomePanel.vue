@@ -1,12 +1,13 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import store from '@/store';
-import { ref } from 'vue';
 
 const income = ref(0);
 
-const storeValue = () => {
-  store.dispatch('pushRating', income.value);
-};
+watch(income, () => {
+  store.dispatch('pushRating', { income: income.value });
+  console.log(store.getters.results);
+});
 </script>
 
 <template>
