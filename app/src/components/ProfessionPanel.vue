@@ -22,7 +22,8 @@ const options: CardConfig[] = [
 ];
 
 const storeValue = (value: number) => {
-  store.dispatch('pushRating', value);
+  store.dispatch('pushRating', { profession: value });
+  console.log(store.getters.results);
 };
 </script>
 

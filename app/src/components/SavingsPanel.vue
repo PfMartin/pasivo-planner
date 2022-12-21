@@ -1,18 +1,19 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import store from '@/store';
-import { ref } from 'vue';
 
 const savings = ref(0);
 
-const storeValue = () => {
-  store.dispatch('pushRating', savings.value);
-};
+watch(savings, () => {
+  store.dispatch('pushRating', { savings: savings.value });
+  console.log(store.getters.results);
+});
 </script>
 
 <template>
   <div class="savings-panel">
     <label for="savings"> Einkommen </label>
-    <input v-model="savings" id="savings" />
+    <input v-model.number="savings" id="savings" />
     €
   </div>
 </template>
