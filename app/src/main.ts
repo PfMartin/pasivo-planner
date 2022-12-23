@@ -9,4 +9,4 @@ createApp(App)
   .use(router)
   .use(store)
   .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#finance-planner-app');
+  .mount('#vue-app');

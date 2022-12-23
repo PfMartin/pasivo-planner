@@ -1,10 +1,7 @@
 #!/bin/bash
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-
-TEMPLATE_DIR="$CURRENT_DIR/wordpress/html/wp-content/themes/twentytwentytwo/templates/"
-SCRIPTS_DIR="$CURRENT_DIR/wordpress/html/wp-content/themes/twentytwentytwo/scripts/"
-CSS_DIR="$CURRENT_DIR/wordpress/html/wp-content/themes/twentytwentytwo/css/"
+PLUGIN_DIR="$CURRENT_DIR/wordpress/html/wp-content/plugins/finance-planner"
 
 function setupDirectory {
   if [ ! -d $1 ]; then
@@ -16,15 +13,14 @@ function setupDirectory {
 }
 
 # Setup directories
-setupDirectory $SCRIPTS_DIR
-setupDirectory $CSS_DIR
+setupDirectory $PLUGIN_DIR
 
 echo ""
 
 echo "Copying files"
-sudo cp $CURRENT_DIR/app/src/app-template.html $TEMPLATE_DIR/finance-planner-app.html
-sudo cp $CURRENT_DIR/app/dist/assets/*.js $SCRIPTS_DIR/finance-planner-app.js
-sudo cp $CURRENT_DIR/app/dist/assets/*.css $CSS_DIR/finance-planner-style.css
+sudo cp -r $CURRENT_DIR/wp-vue/dist $PLUGIN_DIR
+# sudo rm -f $PLUGIN_DIR/dist/finance-planner.js
+# sudo mv $PLUGIN_DIR/dist/*js $PLUGIN_DIR/dist/assets/finance-planner.js
 echo "Files are ready"
 
 echo ""
