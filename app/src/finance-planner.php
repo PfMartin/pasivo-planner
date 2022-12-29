@@ -14,8 +14,8 @@
  */
 
  function func_load_vuescripts() {
-     wp_register_script('finance-planner', plugin_dir_url( __FILE__ ).'./finance-planner.js', true);
-     wp_enqueue_style( 'finance-planner-style', plugin_dir_url( __FILE__ ).'./finance-planner-style.css', true, '1.1', 'all');
+     wp_register_script('finance-planner', plugin_dir_url( __FILE__ ).'finance-planner.js', true);
+     wp_enqueue_style( 'finance-planner-style', plugin_dir_url( __FILE__ ).'finance-planner-style.css', true, '1.1', 'all');
  }
 
  add_action('wp_enqueue_scripts', 'func_load_vuescripts');
@@ -31,5 +31,5 @@
      return $str;
  } // end function
 
-  add_shortcode( 'wpvue', 'func_load_finance_planner' );
+  add_shortcode( 'finance-planner-app', 'func_load_finance_planner' );
 ?>
