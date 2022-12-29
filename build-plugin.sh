@@ -15,6 +15,8 @@ APP_DIR="${FILE_DIR}/app/src/finance-planner.php"
 BUILD_DIR="${FILE_DIR}/app/dist/assets"
 PACKAGE_DIR="${FILE_DIR}/package"
 
+npm run --prefix $FILE_DIR/app build 
+
 setupDirectory $PACKAGE_DIR
 
 echo "Copying files"
@@ -35,3 +37,4 @@ echo " "
 echo "Removing package directory"
 rm -rf $PACKAGE_DIR
 echo "Done removing package directory"
+
