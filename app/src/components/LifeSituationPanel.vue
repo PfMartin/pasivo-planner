@@ -3,41 +3,48 @@ import OptionCard, { CardConfig } from '@/components/ui/OptionCard.vue';
 import PanelFrame from '@/components/ui/PanelFrame.vue';
 import store from '@/store';
 
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? `${store.getters.pluginPath}/assets/undraw`
+    : '../../../assets/undraw';
+
+console.log(basePath);
+
 const options: CardConfig[] = [
   {
     title: 'Schüler | Student',
     detail: 'in Schule, Studium oder Ausbildung',
-    pictureUrl: 'undraw/student.svg',
+    pictureUrl: `${basePath}/student.svg`,
     value: 1,
   },
   {
     title: 'Berufseinsteiger',
     detail: 'start in den Beruf gemeistert',
-    pictureUrl: 'undraw/starting-to-work.svg',
+    pictureUrl: `${basePath}/starting-to-work.svg`,
     value: 2,
   },
   {
     title: 'Mitten im Leben',
     detail: 'ca. 30 - 50 Jahre',
-    pictureUrl: 'undraw/work.svg',
+    pictureUrl: `${basePath}/work.svg`,
     value: 3,
   },
   {
     title: 'Kurz vor der Rente',
     detail: 'ca. 50 - 65',
-    pictureUrl: 'undraw/almost-retired.svg',
+    pictureUrl: `${basePath}/almost-retired.svg`,
     value: 4,
   },
   {
     title: 'Rentner',
     detail: 'älter als 65',
-    pictureUrl: 'undraw/retired.svg',
+    pictureUrl: `${basePath}/retired.svg`,
     value: 5,
   },
   {
     title: 'Es ist kompliziert',
     detail: 'keins trifft zu',
-    pictureUrl: 'undraw/dont-know.svg',
+    pictureUrl: `${basePath}/dont-know.svg`,
     value: 0,
   },
 ];

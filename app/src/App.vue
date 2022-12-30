@@ -1,4 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import store from '@/store';
+
+const setPluginPath = (): void => {
+  const currentScript: any = document.currentScript;
+  const currentScriptPathArray = currentScript.src.split('/');
+  currentScriptPathArray.pop();
+  store.dispatch('setPluginPath', currentScriptPathArray.join('/'));
+};
+
+if (process.env.NODE_ENV === 'production') {
+  setPluginPath();
+}
+</script>
 
 <template>
   <div class="app">
