@@ -23,9 +23,21 @@ const optionCard = computed(() => ({
 }));
 
 const picture = computed((): string => {
-  return props.cardConfig.pictureUrl
-    ? new URL(`./assets/${props.cardConfig.pictureUrl}`, import.meta.url).href
-    : '';
+  if (!props.cardConfig.pictureUrl) {
+    return '';
+  } else if (process.env.NODE_ENV === 'production') {
+    const currentScript: any = document.currentScript;
+    const currentScriptPathArray = currentScript.src.split('/');
+    currentScriptPathArray.pop();
+    const currentScriptPath = currentScriptPathArray.join('/');
+
+    return `${currentScriptPath}/assets/${props.cardConfig.pictureUrl}`;
+  }
+
+  return new URL(
+    `../../../assets/${props.cardConfig.pictureUrl}`,
+    import.meta.url
+  ).href;
 });
 </script>
 
