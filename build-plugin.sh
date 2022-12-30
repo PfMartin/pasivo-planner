@@ -23,6 +23,7 @@ echo "Copying files"
 cp $BUILD_DIR/*.js $PACKAGE_DIR/finance-planner.js
 cp $BUILD_DIR/*.css $PACKAGE_DIR/finance-planner-style.css
 cp $FILE_DIR/app/src/finance-planner.php $PACKAGE_DIR/finance-planner.php
+cp -r $FILE_DIR/app/assets $PACKAGE_DIR
 echo "Done copying files"
 
 echo " "

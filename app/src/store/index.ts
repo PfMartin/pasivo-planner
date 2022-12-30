@@ -6,11 +6,13 @@ const vuexLocal = new VuexPersistence({
 });
 
 interface State {
+  pluginPath: string;
   results: Record<string, number>;
 }
 
 export default createStore({
   state: {
+    pluginPath: '',
     results: {},
   },
   mutations: {
@@ -23,6 +25,9 @@ export default createStore({
     popRating(state: State, property: string): void {
       delete state.results[property];
     },
+    setPluginPath(state: State, path: string): void {
+      state.pluginPath = path;
+    },
   },
   actions: {
     pushRating(
@@ -34,10 +39,16 @@ export default createStore({
     popRating(store: ActionContext<State, State>, property: string): void {
       store.commit('popRating', property);
     },
+    setPluginPath(store: ActionContext<State, State>, path: string): void {
+      store.commit('setPluginPath', path);
+    },
   },
   getters: {
     results(state: State): Record<string, number> {
       return state.results;
+    },
+    pluginPath(state: State): string {
+      return state.pluginPath;
     },
   },
   plugins: [vuexLocal.plugin],
