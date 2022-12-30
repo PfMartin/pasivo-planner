@@ -25,11 +25,9 @@ const optionCard = computed(() => ({
 const picture = computed((): string => {
   if (!props.cardConfig.pictureUrl) {
     return '';
-  } else if (process.env.NODE_ENV === 'production') {
-    return props.cardConfig.pictureUrl;
   }
 
-  return new URL(props.cardConfig.pictureUrl, import.meta.url).href;
+  return props.cardConfig.pictureUrl;
 });
 </script>
 

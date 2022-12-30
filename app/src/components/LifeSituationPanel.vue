@@ -3,48 +3,49 @@ import OptionCard, { CardConfig } from '@/components/ui/OptionCard.vue';
 import PanelFrame from '@/components/ui/PanelFrame.vue';
 import store from '@/store';
 
-const basePath =
-  process.env.NODE_ENV === 'production'
-    ? `${store.getters.pluginPath}/assets/undraw`
-    : '../../../assets/undraw';
+const getPath = (pictureName: string): string => {
+  if (process.env.NODE_ENV === 'production') {
+    return `${store.getters.pluginPath}/assets/undraw/${pictureName}`;
+  }
 
-console.log(basePath);
+  return new URL(`../../assets/undraw/${pictureName}`, import.meta.url).href;
+};
 
 const options: CardConfig[] = [
   {
     title: 'Schüler | Student',
     detail: 'in Schule, Studium oder Ausbildung',
-    pictureUrl: `${basePath}/student.svg`,
+    pictureUrl: getPath('student.svg'),
     value: 1,
   },
   {
     title: 'Berufseinsteiger',
     detail: 'start in den Beruf gemeistert',
-    pictureUrl: `${basePath}/starting-to-work.svg`,
+    pictureUrl: getPath('starting-to-work.svg'),
     value: 2,
   },
   {
     title: 'Mitten im Leben',
     detail: 'ca. 30 - 50 Jahre',
-    pictureUrl: `${basePath}/work.svg`,
+    pictureUrl: getPath('work.svg'),
     value: 3,
   },
   {
     title: 'Kurz vor der Rente',
     detail: 'ca. 50 - 65',
-    pictureUrl: `${basePath}/almost-retired.svg`,
+    pictureUrl: getPath('almost-retired.svg'),
     value: 4,
   },
   {
     title: 'Rentner',
     detail: 'älter als 65',
-    pictureUrl: `${basePath}/retired.svg`,
+    pictureUrl: getPath('retired.svg'),
     value: 5,
   },
   {
     title: 'Es ist kompliziert',
     detail: 'keins trifft zu',
-    pictureUrl: `${basePath}/dont-know.svg`,
+    pictureUrl: getPath('dont-know.svg'),
     value: 0,
   },
 ];
