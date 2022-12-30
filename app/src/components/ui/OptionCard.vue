@@ -24,8 +24,7 @@ const optionCard = computed(() => ({
 
 const picture = computed((): string => {
   return props.cardConfig.pictureUrl
-    ? new URL(`../../assets/${props.cardConfig.pictureUrl}`, import.meta.url)
-        .href
+    ? new URL(`./assets/${props.cardConfig.pictureUrl}`, import.meta.url).href
     : '';
 });
 </script>
