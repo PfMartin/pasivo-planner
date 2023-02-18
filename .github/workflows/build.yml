@@ -1,0 +1,27 @@
+name: build-plugin
+
+on: [push]
+
+jobs:
+  build-plugin:
+    name: build-plugin
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout source
+      uses: actions/checkout@v3
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+      
+    - name: Build plugin
+      run: |
+        ./build-plugin.sh
+
+    - name: Upload plugin
+      uses: actions/upload-artifact@v3
+      with:
+        name: finance-planner.zip
+        path: ./finance-planner.zip
