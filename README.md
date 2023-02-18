@@ -1,19 +1,21 @@
-# Vue 3 + TypeScript + Vite
+# Pasivo apps
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Workflow
 
-## Recommended IDE Setup
+### Build project
 
-[VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- Project is built using the `./github/workflows/build-plugin.yml`
+  - Builds the project to `./app/dist` with `npm run build`
+  - Creates a `.zip` file with the built project and the relevant file for creating a wordpress plugin
+  - Publish the `.zip` file as an artifact
 
-## Type Support For `.vue` Imports in TS
+### Use the plugin
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+- Download the artifact `finance-planner.zip` from github actions
+- Remove the previous used plugin
+- Install the new plugin by installing by using the `finance-planner.zip` file
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+## DEPRECATED INFO
 
 ## Options for hosting the program
 
@@ -26,7 +28,7 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 ### Custom templates after twentytwentytwo
 
--   Modify `functions.php` inside your theme
+- Modify `functions.php` inside your theme
 
 ```php
 # wordpress/html/wp-content/themes/twnetytwentytwo/functions.php
@@ -53,9 +55,9 @@ add_action( 'wp_enqueue_scripts', 'financeplanner_scripts' );
 # ...
 ```
 
--   Copy your app's build files to the paths that should be loaded in `wp_enqueue_style` and `wp_enqueue_script`.
+- Copy your app's build files to the paths that should be loaded in `wp_enqueue_style` and `wp_enqueue_script`.
 
--   Create the folders in your used theme and copy the files
+- Create the folders in your used theme and copy the files
 
 ```bash
 sudo ./setup_files.sh
@@ -67,8 +69,8 @@ sudo ./setup_files.sh
 
 [wpmudev.com - create hybrid spa](https://wpmudev.com/blog/creating-a-hybrid-single-page-app-wordpress-with-vuejs/)
 
--   Create `.php` file in the used theme
--   In my case it was the theme `twentytwentythree`
+- Create `.php` file in the used theme
+- In my case it was the theme `twentytwentythree`
 
 ```php
 <?php Template Name: Search Page ?>
