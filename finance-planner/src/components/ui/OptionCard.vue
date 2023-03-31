@@ -78,6 +78,7 @@ const picture = computed((): string => {
     }
 
     p {
+      color: $darkest-green;
       margin: 0;
       padding: 0;
     }
