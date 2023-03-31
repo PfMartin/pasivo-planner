@@ -18,6 +18,6 @@ jobs:
 
       - name: Run prettier check
         run: |
-          cd ./finance-planner-app
+          cd ./finance-planner
           npm ci
           npm run prettier:check
