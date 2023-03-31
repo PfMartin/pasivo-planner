@@ -1,10 +1,10 @@
-name: build-plugin
+name: build-finance-planner-plugin
 
 on: [push]
 
 jobs:
-  build-plugin:
-    name: build-plugin
+  build-finance-planner-plugin:
+    name: build-finance-planner-plugin
     runs-on: ubuntu-latest
 
     steps:
@@ -18,10 +18,10 @@ jobs:
         
       - name: Build plugin
         run: |
-          ./build-plugin.sh
+          ./finance-planner/build-finance-planner-plugin.sh
 
       - name: Upload plugin
         uses: actions/upload-artifact@v3
         with:
           name: finance-planner.zip
-          path: ./finance-planner.zip
+          path: ./finance-planner/finance-planner.zip

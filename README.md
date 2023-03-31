@@ -1,5 +1,10 @@
 # Pasivo apps
 
+## Apps
+
+- Finance planner
+- Risk assessment
+
 ## Workflow
 
 ### Build project

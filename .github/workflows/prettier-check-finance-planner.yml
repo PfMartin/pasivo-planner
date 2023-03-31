@@ -1,10 +1,10 @@
-name: prettier-check
+name: prettier-check-finance-planner
 
 on: [push]
 
 jobs:
-  check-prettier:
-    name: check-prettier
+  prettier-check-finance-planner:
+    name: prettier-check-finance-planner
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +18,6 @@ jobs:
 
       - name: Run prettier check
         run: |
-          cd ./app
+          cd ./finance-planner-app
           npm ci
           npm run prettier:check
