@@ -17,6 +17,9 @@
 ### Use the plugin
 
 - Download the artifact `finance-planner.zip` from github actions
+- Unzip it
+  - The Download contains a zip file inside a zip file
+  - It has to be unzipped to a zip file
 - Remove the previous used plugin
 - Install the new plugin by installing by using the `finance-planner.zip` file
 
