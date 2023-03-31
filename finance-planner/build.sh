@@ -15,6 +15,7 @@ APP_DIR="${FILE_DIR}/src/finance-planner.php"
 BUILD_DIR="${FILE_DIR}/dist/assets"
 PACKAGE_DIR="${FILE_DIR}/package"
 
+npm --prefix $FILE_DIR ci
 npm run --prefix $FILE_DIR build 
 
 setupDirectory $PACKAGE_DIR
