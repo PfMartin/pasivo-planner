@@ -18,7 +18,7 @@ jobs:
         
       - name: Build plugin
         run: |
-          ./finance-planner/build-finance-planner-plugin.sh
+          ./finance-planner/build.sh
 
       - name: Upload plugin
         uses: actions/upload-artifact@v3
